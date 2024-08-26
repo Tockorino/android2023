@@ -1,3 +1,4 @@
 # android2023
-Branch master
+Branch master pour le projet
+
 url de la video : https://helha-my.sharepoint.com/:v:/g/personal/la217960_student_helha_be/EaW1gq-peV1JpI7rc0MBSrABIMv-kCG4w2X6bxP8CPLJKg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&email=pluquetf%40helha.be&e=YIXMBs
