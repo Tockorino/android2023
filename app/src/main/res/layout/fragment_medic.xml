@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp">
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:text="@string/add_medic_tittle"
+        android:background="@drawable/bordered_header"/>
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/add_medic_label" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/MedicNameTextView"
+            android:layout_width="301dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:text=""
+            android:background="@drawable/bordered_textview"/>
+
+        <Button
+            android:id="@+id/AddMedicButton"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#023047"
+            android:text="+" />
+    </LinearLayout>
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="86dp"
+
+        android:text="@string/medic_date_label" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btnStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#023047"
+            android:text="Date de début" />
+
+        <Button
+            android:id="@+id/btnEndDate"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnStartDate"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#023047"
+            android:text="Date de fin"
+            app:rippleColor="#023047"
+            app:strokeColor="#023047" />
+
+        <EditText
+            android:id="@+id/startDateText"
+            android:layout_width="128dp"
+            android:layout_height="46dp"
+            android:layout_below="@+id/btnStartDate"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="-47dp"
+            android:layout_toRightOf="@+id/btnStartDate"
+            android:background="@drawable/bordered_textview"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="Date de début" />
+
+        <EditText
+            android:id="@+id/endDateText"
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:layout_below="@+id/btnEndDate"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="-44dp"
+            android:layout_toRightOf="@+id/btnEndDate"
+            android:background="@drawable/bordered_textview"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:hint="Date de fin" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:listSeparatorTextViewStyle"
+        android:text="@string/pickup_label"/>
+    <CheckBox
+
+        android:id="@+id/MorningCheckBox"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/pickup_time_morning_label" />
+
+    <CheckBox
+
+        android:id="@+id/NoonCheckBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="37dp"
+        android:text="@string/pickup_time_noon_label" />
+
+    <CheckBox
+        android:id="@+id/EveningCheckBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="37dp"
+        android:text="@string/pickup_time_night_label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/validButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#023047"
+            android:text="@string/valid_button" />
+    </LinearLayout>
+</LinearLayout>

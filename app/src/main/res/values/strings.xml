@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MedicTime</string>
+    <string name="add_medic_tittle">Ajouter un médicament</string>
+    <string name="add_medic_label">Medicament :</string>
+    <string name="medic_date_label">Dates :</string>
+    <string name="pickup_label">Prises :</string>
+    <string name="pickup_time_morning_label">Matin</string>
+    <string name="pickup_time_noon_label">Midi</string>
+    <string name="pickup_time_night_label">Soir</string>
+    <string name="valid_button">Valider</string>
+    <string name="add_medic_name_label">Ajouter un médicament</string>
+    <string name="name_label">Nom</string>
+    <string name="name_medic_label"></string>
+    <string name="duration_default_label">Durée par défaut :</string>
+    <string name="pickup_default_label">Prise par défaut :</string>
+    <string name="add_button">Ajouter</string>
+
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp">
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:id="@+id/enteteAddMedicTextView"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:text="@string/add_medic_name_label"
+        android:background="@drawable/bordered_header"/>
+
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:id="@+id/addNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="@string/name_label" />
+
+    <EditText
+        style="?android:listSeparatorTextViewStyle"
+        android:id="@+id/MedicNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:gravity="center"
+        android:text="@string/name_medic_label" />
+    <TextView
+        style="?android:listSeparatorTextViewStyle"
+        android:id="@+id/DurationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="@string/duration_default_label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:layout_width="100dp"
+            android:id="@+id/DurationSpinner"
+            android:layout_height="48dp"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/JoursTextView"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bordered_textview"
+            android:gravity="center"
+            android:text="Jours" />
+
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/DefaultPriseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:listSeparatorTextViewStyle"
+        android:text="@string/pickup_default_label"/>
+    <CheckBox
+        android:id="@+id/MatinCheckBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="37dp"
+        android:text="@string/pickup_time_morning_label" />
+
+    <CheckBox
+        android:id="@+id/MidiCheckBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="37dp"
+        android:text="@string/pickup_time_noon_label" />
+
+    <CheckBox
+        android:id="@+id/SoirCheckBox"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_height="37dp"
+        android:text="@string/pickup_time_night_label" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/AddMedicButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="#023047"
+            android:text="@string/add_button" />
+    </LinearLayout>
+</LinearLayout>
