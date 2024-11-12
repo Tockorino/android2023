@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -62,21 +63,29 @@ public class AddMedicFragment extends Fragment {
             return;
         }
 
+        // Récupérer l'état des cases à cocher
+        boolean morningChecked = ((CheckBox) getView().findViewById(R.id.MatinCheckBox)).isChecked();
+        boolean noonChecked = ((CheckBox) getView().findViewById(R.id.MidiCheckBox)).isChecked();
+        boolean eveningChecked = ((CheckBox) getView().findViewById(R.id.SoirCheckBox)).isChecked();
+
         Medic medic = new Medic(UUID.randomUUID());
         medic.setName(name);
         medic.setDuration(duration);
+        medic.setMorning(morningChecked); // Met à jour l'état du matin
+        medic.setNoon(noonChecked); // Met à jour l'état de midi
+        medic.setEvening(eveningChecked); // Met à jour l'état du soir
 
         MedicList medicList = MedicList.get(getContext());
         ContentValues values = new ContentValues();
         values.put(MedicDbSchema.MedicTable.cols.UUID, medic.getID().toString());
         values.put(MedicDbSchema.MedicTable.cols.NAME, medic.getName());
         values.put(MedicDbSchema.MedicTable.cols.DURATION, medic.getDuration());
-        values.put(MedicDbSchema.MedicTable.cols.MORNING, medic.isMorning());
-        values.put(MedicDbSchema.MedicTable.cols.NOON, medic.isNoon());
-        values.put(MedicDbSchema.MedicTable.cols.EVENING, medic.isEvening());
+        values.put(MedicDbSchema.MedicTable.cols.MORNING, morningChecked ? 1 : 0); // Stocke 1 si coché, sinon 0
+        values.put(MedicDbSchema.MedicTable.cols.NOON, noonChecked ? 1 : 0); // Idem pour midi
+        values.put(MedicDbSchema.MedicTable.cols.EVENING, eveningChecked ? 1 : 0); // Idem pour soir
 
         medicList.addMedic(values);
-        Toast.makeText(getContext(), "Médicament ajouté", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), "Médicament ajouté à la liste", Toast.LENGTH_SHORT).show();
         getActivity().getSupportFragmentManager().popBackStack();
     }
 

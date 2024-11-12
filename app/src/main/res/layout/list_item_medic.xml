@@ -1,37 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
+    <!-- TextView pour la date -->
     <TextView
-        android:id="@+id/startDateTextView"
+        android:id="@+id/dateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Date de début" />
+        android:text="24/09/2024"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/endDateTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date de fin" />
-
+    <!-- Matin -->
     <TextView
         android:id="@+id/morningTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Matin" />
+        android:text="Matin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_green_dark"
+        android:layout_below="@id/dateTextView"
+        android:layout_marginBottom="4dp"
+        />
 
+    <TextView
+        android:id="@+id/morningMedications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Médicament 1\n- Médicament 4"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_background_green"
+        android:padding="8dp"
+        android:layout_below="@id/morningTextView"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"/>
+
+    <!-- Midi -->
     <TextView
         android:id="@+id/noonTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Midi" />
+        android:text="Midi"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_orange_light"
+        android:layout_below="@id/morningMedications"
+        android:layout_marginBottom="4dp" />
 
+    <TextView
+        android:id="@+id/noonMedications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="- Médicament 2\n- Médicament 5"
+        android:textStyle="bold"
+        android:background="@drawable/rounded_background_yellow"
+        android:padding="8dp"
+        android:layout_below="@id/noonTextView"
+        android:layout_marginBottom="12dp"
+        android:clickable="true"/>
+
+    <!-- Soir -->
     <TextView
         android:id="@+id/eveningTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Soir" />
-</LinearLayout>
+        android:text="Soir"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_below="@id/noonMedications"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/eveningMedications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="- Médicament 3\n- Médicament 6"
+        android:background="@drawable/rounded_background_orange"
+        android:padding="8dp"
+        android:layout_below="@id/eveningTextView"
+        android:clickable="true"/>
+
+</RelativeLayout>

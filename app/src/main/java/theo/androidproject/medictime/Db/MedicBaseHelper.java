@@ -3,10 +3,11 @@ package theo.androidproject.medictime.Db;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class MedicBaseHelper extends SQLiteOpenHelper {
 
-        private static final int VERSION = 1;
+        private static final int VERSION = 2;
         private static final String DATABASE_NAME = "medicBase.db";
 
         public MedicBaseHelper(Context context) { super(context, DATABASE_NAME, null, VERSION);}
@@ -23,10 +24,12 @@ public class MedicBaseHelper extends SQLiteOpenHelper {
                         MedicDbSchema.MedicTable.cols.EVENING + " BOOLEAN" +
                         ")"
                 );
+                Log.d("DB", "medictable created");
 
                 db.execSQL("CREATE TABLE " + MedicDbSchema.IntakeMedicTable.NAME + " (" +
                         " _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         MedicDbSchema.IntakeMedicTable.cols.MEDIC_ID + " TEXT, " +
+                        MedicDbSchema.IntakeMedicTable.cols.NAME + " TEXT, " +
                         MedicDbSchema.IntakeMedicTable.cols.DATE_BEGIN + " TEXT, " +
                         MedicDbSchema.IntakeMedicTable.cols.DATE_END + " TEXT, " +
                         MedicDbSchema.IntakeMedicTable.cols.MORNING + " BOOLEAN, " +
@@ -34,11 +37,13 @@ public class MedicBaseHelper extends SQLiteOpenHelper {
                         MedicDbSchema.IntakeMedicTable.cols.EVENING + " BOOLEAN" +
                         ")"
                 );
+                Log.d("DB", "intakemedictable created");
         }
 
-        @Override
-        public void onUpgrade(android.database.sqlite.SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+                if (oldVersion < newVersion) {
+                        db.execSQL("ALTER TABLE " + MedicDbSchema.IntakeMedicTable.NAME + " ADD COLUMN " + MedicDbSchema.IntakeMedicTable.cols.NAME + " TEXT;");
+                }
         }
 
 }

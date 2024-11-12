@@ -20,7 +20,7 @@ import theo.androidproject.medictime.Models.IntakeMedic;
 import theo.androidproject.medictime.Models.IntakeMedicList;
 import theo.androidproject.medictime.R;
 
-public class MedicAddFragment extends Fragment {
+public class MedicAddFragmentToList extends Fragment {
     private EditText mMedicNameEditText;
     private Spinner mDurationSpinner;
     private CheckBox mMorningCheckBox;

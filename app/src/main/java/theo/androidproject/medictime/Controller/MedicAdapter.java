@@ -1,11 +1,13 @@
 package theo.androidproject.medictime.Controller;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -32,12 +34,33 @@ public class MedicAdapter extends RecyclerView.Adapter<MedicAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MedicItem medicItem = mMedicList.get(position);
-        holder.startDateTextView.setText("Date de début: " + medicItem.getStartDate());
-        holder.endDateTextView.setText("Date de fin: " + medicItem.getEndDate());
-        holder.morningTextView.setText("Matin: " + medicItem.getMorning());
-        holder.noonTextView.setText("Midi: " + medicItem.getNoon());
-        holder.eveningTextView.setText("Soir: " + medicItem.getEvening());
+        holder.dateTextView.setText(medicItem.getDateBegin());
+        holder.morningMedications.setText(medicItem.getMorning());
+        holder.noonMedications.setText(medicItem.getNoon());
+        holder.eveningMedications.setText(medicItem.getEvening());
+
+        holder.morningMedications.setOnClickListener(v -> openMedicFragment(v, medicItem, "morning"));
+        holder.noonMedications.setOnClickListener(v -> openMedicFragment(v, medicItem, "noon"));
+        holder.eveningMedications.setOnClickListener(v -> openMedicFragment(v, medicItem,"evening"));
     }
+
+    private void openMedicFragment(View view, MedicItem medicItem, String timeOfDay) {
+        FragmentActivity activity = (FragmentActivity) view.getContext();
+
+        // Créer un MedicFragment et y ajouter les données du médicament
+        MedicFragment medicFragment = new MedicFragment();
+        Bundle args = new Bundle();
+        args.putInt("ID", medicItem.getID());
+
+        medicFragment.setArguments(args);
+
+        // Remplacer le fragment actuel par MedicFragment
+        activity.getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, medicFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
 
     @Override
     public int getItemCount() {
@@ -45,19 +68,17 @@ public class MedicAdapter extends RecyclerView.Adapter<MedicAdapter.ViewHolder> 
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView startDateTextView;
-        TextView endDateTextView;
-        TextView morningTextView;
-        TextView noonTextView;
-        TextView eveningTextView;
+        TextView dateTextView;
+        TextView morningMedications;
+        TextView noonMedications;
+        TextView eveningMedications;
 
         ViewHolder(View itemView) {
             super(itemView);
-            startDateTextView = itemView.findViewById(R.id.startDateTextView);
-            endDateTextView = itemView.findViewById(R.id.endDateTextView);
-            morningTextView = itemView.findViewById(R.id.morningTextView);
-            noonTextView = itemView.findViewById(R.id.noonTextView);
-            eveningTextView = itemView.findViewById(R.id.eveningTextView);
+            dateTextView = itemView.findViewById(R.id.dateTextView);
+            morningMedications = itemView.findViewById(R.id.morningMedications);
+            noonMedications = itemView.findViewById(R.id.noonMedications);
+            eveningMedications = itemView.findViewById(R.id.eveningMedications);
         }
     }
 }

@@ -23,16 +23,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/MedicNameTextView"
-            android:layout_width="301dp"
+        <AutoCompleteTextView
+            android:id="@+id/MedicNameAutoComplete"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:gravity="center"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="10dp"
-            android:text=""
-            android:background="@drawable/bordered_textview"/>
+            android:background="@drawable/bordered_textview"
+            android:hint="Rechercher un médicament"/>
 
         <Button
             android:id="@+id/AddMedicButton"
