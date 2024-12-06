@@ -1,0 +1,1 @@
+Video de présentation : https://helha-my.sharepoint.com/:v:/r/personal/la217960_student_helha_be/Documents/projet%20Android%202023-2024/2024-12-06%2017-15-58.mkv?csf=1&web=1&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=KAyhv2
